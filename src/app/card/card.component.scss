@@ -1,0 +1,71 @@
+.card-container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card-wrapper {
+    max-width: 320px;
+    min-width: 220px;
+}
+
+.card-info {
+  margin: 20px 30px;
+}
+
+.card-owner {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.add-wish {
+    font-size: 80px;
+}
+
+.close-button {
+    position: fixed;
+    right: 0px;
+}
+
+.close-link {
+    text-decoration: none;
+}
+
+.close-button a {
+    text-decoration: none;
+}
+
+.igx-card-content__text {
+    font-style: italic;
+}
+
+.present {
+    padding: 0 30px;
+    border-right: 1px solid black;
+    display: inline-block;
+}
+
+igx-input-group {
+    margin: 0 30px;
+}
+
+.addWish {
+    width: 500px;
+}
+
+.wish-border {
+    border: 2px solid black;
+}
+
+.sponsors {
+    margin: 5px 20px;
+}
+
+.paid {
+    float: right;
+}

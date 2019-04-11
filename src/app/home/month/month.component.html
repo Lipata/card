@@ -1,0 +1,27 @@
+<igx-list>
+<a href="card" class="item">
+  <igx-list-item #item *ngFor="let employee of month.birthdays.reverse()" [isHeader]="employee.header">
+    <div [class]="'item-container ' + (employee.birthday.getDate() < today.getDate() ? 'blurry' : '')">
+      <span class="birthday">
+        {{ dateSuffix(employee.birthday.getDate()) }}
+        <igx-icon fontSet="material" >
+            {{ employee.reason }}
+          </igx-icon>
+      </span>
+      <div class="contact">
+        <igx-avatar [src]="employee.photo" roundShape="true" size="large"></igx-avatar>
+        <div class="contact__info">
+          <span class="name">{{ employee.name }}</span>
+        </div>
+      </div>
+      <igx-icon fontSet="material" class="present">{{ employee.present ? "card_giftcard" : "attach_money"}}</igx-icon>
+      <igx-avatar src="https://randomuser.me/api/portraits/women/7.jpg" roundShape="true" class="charge"></igx-avatar>
+      <igx-icon fontSet="material">group</igx-icon>
+      <span class="guests">+{{ employee.kudos }}</span>
+      <igx-icon fontSet="material" [color]="employee.check ? 'green' : 'red'">
+        {{ employee.check ? 'check' : 'create' }}
+      </igx-icon>
+    </div>
+  </igx-list-item>
+</a>
+</igx-list>

@@ -1,0 +1,12 @@
+<igx-banner class="offline-banner" #connectionBanner>
+    <igx-icon>atm</igx-icon>
+    <b>IBAN</b>: BG80 BNBG 9661 1020 3456 78     <b>Recipient</b>: Infragistics BG Gift
+</igx-banner>
+<igx-expansion-panel *ngFor="let month of birthdays" [collapsed]="today.getMonth() !== month.date.getMonth()">
+  <igx-expansion-panel-header (onInteraction)="onInteraction($event)">
+      <igx-expansion-panel-title>{{ months[month.date.getMonth()] + ' ' + month.date.getFullYear() }}</igx-expansion-panel-title>
+  </igx-expansion-panel-header>
+  <igx-expansion-panel-body>
+      <app-month [month]="month"></app-month>
+  </igx-expansion-panel-body>
+</igx-expansion-panel>

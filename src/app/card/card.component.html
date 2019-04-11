@@ -1,0 +1,83 @@
+<button igxButton="icon" class="close-button"><a href="home" class="close-link"><igx-icon fontSet="material">close</igx-icon></a></button>
+<div class="card-info">
+    <igx-avatar src="https://randomuser.me/api/portraits/men/6.jpg" roundShape="true" size="large"></igx-avatar>
+    <h4 class="card-owner">Maynard James Keenan</h4>
+    <igx-icon fontSet="material">group</igx-icon>
+    <span class="guests">+7</span>
+    <div class="present">
+      <a target="_blank" href="http://planeta.tv/news/view/Dnes-startira-prodajbata-na-bileti-za-Koledniq-koncert-na-Veselin-Marinov">
+      <igx-icon fontSet="material" >card_giftcard</igx-icon></a>
+      Билети за концерт на Веско Маринов
+      <igx-icon fontSet="material">thumb_down</igx-icon>
+      <igx-icon fontSet="material">thumb_up</igx-icon>
+    </div>
+    <button igxButton="icon" (click)="addPresent.open()"><igx-icon fontSet="material">add</igx-icon></button>
+</div>
+<div class="card-container">
+  <article [class]="'card-wrapper ' + (toast.owner? 'wish-border': '')" *ngFor="let toast of toasts">
+      <igx-card>
+        <igx-card-header>
+            <igx-avatar src="{{ toast.toaster.imgUrl }}" roundShape="true"></igx-avatar>
+            <div class="igx-card-header__tgroup">
+                <h3 class="igx-card-header__title--small">{{ toast.toaster.name }}</h3>
+            </div>
+        </igx-card-header>
+
+        <igx-card-content>
+          <div *ngIf="toast.wishImgUrl">
+              <img [src]="toast.wishImgUrl"/>
+          </div>
+            <p class="igx-card-content__text">{{ toast.wish }}</p>
+        </igx-card-content>
+          <igx-card-actions>
+              <div class="igx-card-actions__igroup--end">
+                  <span igxButton="icon" igxRipple igxRippleCentered="true">
+                      <igx-icon fontSet="material">thumb_up</igx-icon>
+                  </span>
+              </div>
+          </igx-card-actions>
+      </igx-card>
+  </article>
+  <button igxButton="icon" (click)="sendWish.open()"><igx-icon fontSet="material">add</igx-icon></button>
+  <igx-dialog #sendWish title="Add your wish" leftButtonLabel="OK" (onLeftButtonSelect)="sendWish.close()">
+      <igx-input-group>
+          <label igxLabel for="sendWish">Your wish</label>
+          <textarea igxInput name="sendWish"></textarea>
+          <igx-suffix>
+              <igx-icon>sentiment_satisfied_alt</igx-icon>
+          </igx-suffix>
+      </igx-input-group>
+      <igx-input-group>
+          <label igxLabel for="imgUrl">Image URL</label>
+          <input igxInput name="imgUrl"/>
+          <igx-suffix>
+              <igx-icon>touch_app</igx-icon>
+          </igx-suffix>
+      </igx-input-group>
+  </igx-dialog>
+  <igx-dialog #addPresent title="Add present" leftButtonLabel="OK" (onLeftButtonSelect)="addPresent.close()">
+      <igx-input-group>
+          <label igxLabel for="addPresent">Gift</label>
+          <input igxInput name="addPresent"/>
+          <igx-suffix>
+              <igx-icon>card_giftcard</igx-icon>
+          </igx-suffix>
+      </igx-input-group>
+      <igx-input-group>
+          <label igxLabel for="giftUrl">Gift URL</label>
+          <input igxInput name="giftUrl"/>
+          <igx-suffix>
+              <igx-icon>touch_app</igx-icon>
+          </igx-suffix>
+      </igx-input-group>
+    </igx-dialog>
+</div>
+<igx-expansion-panel collapsed="true">
+    <igx-expansion-panel-header>
+        <igx-expansion-panel-title>{{ employees.length }}0лв</igx-expansion-panel-title>
+    </igx-expansion-panel-header>
+    <igx-expansion-panel-body>
+        <igx-avatar class="sponsors" *ngFor="let sponsor of sponsors" [src]="sponsor.imgUrl" roundShape="true" size="medium" (click)="pay($event)"></igx-avatar>
+        <igx-avatar  class="sponsors paid" *ngFor="let employee of employees" [src]="employee.imgUrl" roundShape="true" size="small"></igx-avatar>
+    </igx-expansion-panel-body>
+</igx-expansion-panel>

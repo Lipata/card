@@ -1,0 +1,60 @@
+igx-icon {
+  cursor: pointer;
+  user-select: none;
+}
+
+.item {
+  text-decoration: none;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 30px 30px 0;
+}
+
+.birthday {
+  margin: 0 10px;
+  width: 50px;
+  border-right: 1px solid black;
+}
+
+.guests {
+  font-size: 22px;
+  display: inline-block;
+  margin-right: 40px;
+  width: 30px;
+}
+
+.present {
+  display: inline-block;
+}
+
+.charge {
+  margin: 0 40px;
+}
+
+.contact {
+  display: flex;
+  flex: 1 0 240px;
+  align-items: center;
+}
+
+.contact__info {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 24px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.phone {
+  font-size: 0.875em;
+}
+
+.blurry {
+  opacity: 0.5;
+}
