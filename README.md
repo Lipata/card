@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Lipata/card.svg?branch=master)](https://travis-ci.org/Lipata/card)
+
 # Card
 
 Birtday Card Appliction using [igniteui-angular](https://github.com/IgniteUI/igniteui-angular).
